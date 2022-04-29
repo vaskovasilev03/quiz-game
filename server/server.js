@@ -22,10 +22,6 @@ function createToken(payload) {
 
 function isLoginAuthenticated({ email, password }) {
   userdb = JSON.parse(fs.readFileSync("./users.json", "utf-8"));
-  console.log(userdb.users.findIndex(
-    (user) => user.email === email && user.password === password
-  ) !== -1);
-  
   return userdb.users.findIndex((user) => user.email === email && user.password === password) !== -1;
 }
 
@@ -75,14 +71,13 @@ server.post("/api/auth/register", (req, res) => {
 
 server.post("/api/auth/login", (req, res) => {
   const { email, password } = req.body;
-  
   if (!isLoginAuthenticated({ email, password })) {
-    console.log(userdb);
     const status = 401;
     const message = "Incorrect Email or Password";
     res.status(status).json({ status, message });
     return;
   }
+  
   const access_token = createToken({ email, password });
   res.status(200).json({ access_token });
 });
