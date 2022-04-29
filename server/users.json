@@ -7,13 +7,18 @@
     },
     {
       "id": 2,
-      "email": "joerae",
-      "password": "fafawawws"
+      "email": "someone@mail.org",
+      "password": "some1"
     },
     {
       "id": 3,
-      "email": "nikimantovksi",
-      "password": "1243412"
+      "email": "ivanpetrov@abv.bg",
+      "password": "abv123"
+    },
+    {
+      "id": 4,
+      "email": "vasko@abv.bg",
+      "password": "123abv"
     }
   ]
 }
